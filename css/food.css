@@ -1,8 +1,303 @@
-@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #000;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-img {
+    height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #f1c40f;
+}
+
+/* Home Page */
+.home-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.5);
+}
+
+.home-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.home-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #f1c40f;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #d4ac0d;
+}
+
+/* General Section Styling */
+.about-section,
+.order-section,
+.contact-section,
+.bookings-section,
+.cart-section,
+.checkout-section,
+.signup-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+p {
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+/* Order Page */
+.menu-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 500px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.menu-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    margin-bottom: 15px;
+}
+
+.menu-item button {
+    background-color: #f1c40f;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.menu-item button:hover {
+    background-color: #d4ac0d;
+}
+
+/* Forms */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 20px;
+    background-color: #f1c40f;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background-color: #d4ac0d;
+}
+
+/* Cart Page */
+#cart-items {
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+#cart-items p {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Checkout Page */
+.checkout-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.order-summary {
+    flex: 1;
+    max-width: 500px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#checkout-items p {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+#checkout-form {
+    flex: 1;
+    max-width: 500px;
+}
+
+/* Footer */
+.footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.social-links a {
+    color: #f1c40f;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #d4ac0d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .home-content h1 {
+        font-size: 2rem;
+    }
+
+    .home-content p {
+        font-size: 1rem;
+    }
+
+    .checkout-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-img {
+        max-width: 250px;
+    }
+} 
 
 
 
-/* .poppins-extralight {
+
+
+
+
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Italianno&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+ .poppins-extralight {
     font-family: "Poppins", sans-serif;
     font-optical-sizing: auto;
     font-weight: weight;
@@ -14,7 +309,7 @@
     font-family: "Italianno", cursive;
     font-weight: 400;
     font-style: normal;
-  } */
+  } 
   
   
 
@@ -54,7 +349,7 @@ header{
     background: black;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(30px);
-    /* z-index: -999; */
+    /* z-index: -999; 
 }
 
 .navbar-container{
@@ -114,7 +409,7 @@ header{
     border: none;
     cursor: pointer;
     /* box-shadow: 0 10px 20 px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(30px); */
+    backdrop-filter: blur(30px); 
 }
 
 .bar{
@@ -483,7 +778,7 @@ header{
       background-color: #e3e7e8;
      } */
 
-     .cart-div{
+     /* .cart-div{
        width: 1000px;
        margin: auto;
        transition: 0.5s;
@@ -532,7 +827,7 @@ header{
         width: 500px;
         background-color: #453e3b;
 
-       }
+       } */ 
 
 
 
@@ -617,7 +912,7 @@ header{
 
 
 
-    .footer {
+    /* .footer {
       width: 100%;
       background-color: #fdfdfd;
       text-align: center;
@@ -692,7 +987,7 @@ header{
       border-radius: 8px;
     }
 
-    /* Responsive styles */
+    /* Responsive styles 
     @media (max-width: 768px) {
       .skilled {
         flex-direction: column;
@@ -818,7 +1113,7 @@ header{
 
 
 
-
+ 
 
 
 
@@ -1016,7 +1311,7 @@ header{
     padding: 2rem 6%;
 } */
 
-.heading{
+/* .heading{
     text-align: center;
     font-size: 3.5rem;
     padding: 0;
@@ -1024,7 +1319,7 @@ header{
 }
 .heading span{
     color: blue;
-}
+} */
 
  /* .specialty .box-container{
     display: flex;
