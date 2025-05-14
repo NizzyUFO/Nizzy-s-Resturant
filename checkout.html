@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order - TastyBite Restaurant</title>
+    <title>Checkout - TastyBite Restaurant</title>
     <link rel="stylesheet" href="css/food.css">
 </head>
 <body>
@@ -14,8 +14,8 @@
         <ul class="nav-links">
             <li><a href="food.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="order.html" class="active">Order</a></li>
+             <li><a href="menu.html">Menu</a></li>
+            <li><a href="order.html">Order</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="bookings.html">Bookings</a></li>
             <li><a href="cart.html">Cart</a></li>
@@ -23,26 +23,30 @@
         </ul>
     </nav>
 
-    <section class="order-section">
-        <h1>Our Menu</h1>
-        <div class="menu-item">
-            <img src="./images/burger-image.jpg" alt="Classic Burger" class="menu-img">
-            <h3>Classic Burger</h3>
-            <p>Juicy beef patty with fresh veggies - $8.99</p>
-            <button onclick="addToCart('Classic Burger', 8.99)">Add to Cart</button>
+    <section class="checkout-section">
+        <h1>Checkout</h1>
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div id="checkout-items"></div>
+            <p>Total: $<span id="checkout-total">0.00</span></p>
         </div>
-        <div class="menu-item">
-            <img src="./images/pizza-image.jpg" alt="Margherita Pizza" class="menu-img">
-            <h3>Margherita Pizza</h3>
-            <p>Fresh tomatoes and mozzarella - $12.99</p>
-            <button onclick="addToCart('Margherita Pizza', 12.99)">Add to Cart</button>
-        </div>
-        <div class="menu-item">
-            <img src="./images/fresh-salad-with-turkey-eggs-vegetables.jpg" alt="Caesar Salad" class="menu-img">
-            <h3>Caesar Salad</h3>
-            <p>Crisp romaine with creamy dressing - $6.99</p>
-            <button onclick="addToCart('Caesar Salad', 6.99)">Add to Cart</button>
-        </div>
+        <form id="checkout-form">
+            <h2>Customer Details</h2>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="address">Delivery Address:</label>
+            <textarea id="address" required></textarea>
+            <h2>Payment Information</h2>
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+            <label for="expiry">Expiry Date:</label>
+            <input type="text" id="expiry" placeholder="MM/YY" required>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" placeholder="123" required>
+            <button type="submit">Place Order</button>
+        </form>
     </section>
 
     <footer class="footer">

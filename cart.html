@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order - TastyBite Restaurant</title>
+    <title>Cart - TastyBite Restaurant</title>
     <link rel="stylesheet" href="css/food.css">
 </head>
 <body>
@@ -14,35 +14,20 @@
         <ul class="nav-links">
             <li><a href="food.html">Home</a></li>
             <li><a href="about.html">About</a></li>
+            <li><a href="order.html">Order</a></li>
             <li><a href="menu.html">Menu</a></li>
-            <li><a href="order.html" class="active">Order</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="bookings.html">Bookings</a></li>
-            <li><a href="cart.html">Cart</a></li>
+            <li><a href="cart.html" class="active">Cart</a></li>
             <li><a href="signup.html">Sign Up</a></li>
         </ul>
     </nav>
 
-    <section class="order-section">
-        <h1>Our Menu</h1>
-        <div class="menu-item">
-            <img src="./images/burger-image.jpg" alt="Classic Burger" class="menu-img">
-            <h3>Classic Burger</h3>
-            <p>Juicy beef patty with fresh veggies - $8.99</p>
-            <button onclick="addToCart('Classic Burger', 8.99)">Add to Cart</button>
-        </div>
-        <div class="menu-item">
-            <img src="./images/pizza-image.jpg" alt="Margherita Pizza" class="menu-img">
-            <h3>Margherita Pizza</h3>
-            <p>Fresh tomatoes and mozzarella - $12.99</p>
-            <button onclick="addToCart('Margherita Pizza', 12.99)">Add to Cart</button>
-        </div>
-        <div class="menu-item">
-            <img src="./images/fresh-salad-with-turkey-eggs-vegetables.jpg" alt="Caesar Salad" class="menu-img">
-            <h3>Caesar Salad</h3>
-            <p>Crisp romaine with creamy dressing - $6.99</p>
-            <button onclick="addToCart('Caesar Salad', 6.99)">Add to Cart</button>
-        </div>
+    <section class="cart-section">
+        <h1>Your Cart</h1>
+        <div id="cart-items"></div>
+        <p>Total: $<span id="cart-total">0.00</span></p>
+        <a href="checkout.html" class="btn" onclick="saveCartForCheckout()">Proceed to Checkout</a>
     </section>
 
     <footer class="footer">
