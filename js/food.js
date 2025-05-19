@@ -1,11 +1,35 @@
 // Cart functionality
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+/* CHANGE START */
 function addToCart(itemName, price) {
-    cart.push({ name: itemName, price: price });
+    // Check if item already exists in cart
+    const existingItem = cart.find(item => item.name === itemName);
+    if (existingItem) {
+        existingItem.quantity += 1; // Increment quantity
+    } else {
+        cart.push({ name: itemName, price: price, quantity: 1 }); // Add new item with quantity 1
+    }
     localStorage.setItem('cart', JSON.stringify(cart));
     alert(`${itemName} added to cart!`);
     updateCart();
+}
+
+function updateQuantity(index, change) {
+    if (cart[index].quantity + change >= 1) { // Ensure quantity doesn't go below 1
+        cart[index].quantity += change;
+    } else {
+        removeFromCart(index); // Remove item if quantity would be 0
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCart();
+}
+/* CHANGE END */
+
+function removeFromCart(index) {
+    cart.splice(index, 1); // Remove item at the specified index
+    localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
+    updateCart(); // Refresh cart display
 }
 
 function updateCart() {
@@ -18,12 +42,24 @@ function updateCart() {
     if (cartItems && cartTotal) {
         cartItems.innerHTML = '';
         let total = 0;
-        cart.forEach(item => {
-            const itemElement = document.createElement('p');
-            itemElement.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+        /* CHANGE START */
+        cart.forEach((item, index) => {
+            const itemTotal = item.price * item.quantity;
+            const itemElement = document.createElement('div');
+            itemElement.className = 'cart-item';
+            itemElement.innerHTML = `
+                <span>${item.name} - $${item.price.toFixed(2)} × ${item.quantity} = $${itemTotal.toFixed(2)}</span>
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity(${index}, -1)" class="quantity-btn">−</button>
+                    <span>${item.quantity}</span>
+                    <button onclick="updateQuantity(${index}, 1)" class="quantity-btn">+</button>
+                    <button onclick="removeFromCart(${index})" class="remove-btn">Remove</button>
+                </div>
+            `;
             cartItems.appendChild(itemElement);
-            total += item.price;
+            total += itemTotal;
         });
+        /* CHANGE END */
         cartTotal.textContent = total.toFixed(2);
     }
 
@@ -31,12 +67,15 @@ function updateCart() {
     if (checkoutItems && checkoutTotal) {
         checkoutItems.innerHTML = '';
         let total = 0;
+        /* CHANGE START */
         cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
             const itemElement = document.createElement('p');
-            itemElement.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+            itemElement.textContent = `${item.name} - $${item.price.toFixed(2)} × ${item.quantity} = $${itemTotal.toFixed(2)}`;
             checkoutItems.appendChild(itemElement);
-            total += item.price;
+            total += itemTotal;
         });
+        /* CHANGE END */
         checkoutTotal.textContent = total.toFixed(2);
     }
 }
@@ -49,6 +88,12 @@ function clearCart() {
     cart = [];
     localStorage.removeItem('cart');
     updateCart();
+}
+
+// Sidebar toggle
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('active');
 }
 
 // Form submissions
@@ -93,107 +138,10 @@ document.addEventListener('DOMContentLoaded', () => {
             alert(`Thank you for your order, ${name}! Your order has been placed successfully.`);
             checkoutForm.reset();
             clearCart();
-            window.location.href = 'index.html'; // Redirect to home page
+            window.location.href = 'index.html';
         });
     }
 
     // Update cart on page load
     updateCart();
 }); 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const navbarToggle = document.querySelector(
-//     '.navbar-toggle'
-// )
-// const navbarMenu = document.querySelector('.navbar-menu')
-
-// navbarToggle.addEventListener('click', () => {
-//     navbarToggle.classList.toggle('active');
-//     navbarMenu.classList.toggle('active');
-// })
-
-
-// const  video=document.getElementById('my vid');
-//  video.playbackRate=0.3;
-
-
-
-//  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-// function updateCartUI() {
-//   const cartItems = document.getElementById('cart-items');
-//   cartItems.innerHTML = '';
-//   let total = 0;
-
-//   cart.forEach((item, index) => {
-//     const li = document.createElement('li');
-//     li.innerHTML = `
-//       ${item.name} x${item.quantity} - ₦${(item.price * item.quantity).toLocaleString()}
-//       <button data-index="${index}" class="remove-item">Remove</button>
-//     `;
-//     cartItems.appendChild(li);
-//     total += item.price * item.quantity;
-//   });
-
-//   document.getElementById('total').textContent = `Total: ₦${total.toLocaleString()}`;
-//   localStorage.setItem('cart', JSON.stringify(cart));
-
-//   document.querySelectorAll('.remove-item').forEach(button => {
-//     button.addEventListener('click', (e) => {
-//       const index = e.target.dataset.index;
-//       cart.splice(index, 1);
-//       updateCartUI();
-//     });
-//   });
-// }
-
-// document.querySelectorAll('.add-to-cart').forEach(button => {
-//   button.addEventListener('click', () => {
-//     const product = button.closest('.product');
-//     const id = product.dataset.id;
-//     const name = product.dataset.name;
-//     const price = parseInt(product.dataset.price);
-
-//     const existing = cart.find(item => item.id === id);
-//     if (existing) {
-//       existing.quantity += 1;
-//     } else {
-//       cart.push({ id, name, price, quantity: 1 });
-//     }
-
-//     updateCartUI();
-//   });
-// });
-
-// updateCartUI(); 
