@@ -1,73 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - TastyBite Restaurant</title>
-    <link rel="stylesheet" href="css/food.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | SAVORA</title>
+  <link rel="stylesheet" href="./css/food.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+
+
+
+  <style>
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* Common slide-in animation for sections */
+.slide-in {
+  opacity: 0;
+  transform: translateY(50px); /* start slightly below */
+  animation: slideIn 0.8s forwards;
+}
+
+/* Stagger animation for child elements inside slide-in */
+.slide-in > * {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideIn 0.8s forwards;
+}
+
+/* Use nth-child to stagger children */
+.slide-in > *:nth-child(1) { animation-delay: 0.2s; }
+.slide-in > *:nth-child(2) { animation-delay: 0.4s; }
+.slide-in > *:nth-child(3) { animation-delay: 0.6s; }
+.slide-in > *:nth-child(4) { animation-delay: 0.8s; }
+.slide-in > *:nth-child(5) { animation-delay: 1s; }
+.slide-in > *:nth-child(6) { animation-delay: 1.2s; }
+.slide-in > *:nth-child(7) { animation-delay: 1.4s; }
+
+/* Optional: animate buttons with extra delay */
+.slide-in button {
+  transform: translateY(50px);
+  animation: slideIn 0.8s forwards;
+  animation-delay: 1.6s;
+}
+
+/* Keyframes for slide-up and fade-in */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
 </head>
-<body>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="assets/logo.png" alt="TastyBite Logo" class="logo-img">
+
+<body class="bg-white text-gray-800">
+
+
+  <nav class="navbar">
+    <div class="logo" style="display:flex;align-items:center;gap:8px;">
+      <span class="logo-icon">🍽️</span>
+      <h1 class="logo-text">SAVORA</h1>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="food.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="bookings.html">Bookings</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+
+      <li class="cart-icon">
+        <a href="cart.html">
+          <i class="fa fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
+        </a>
+      </li>
+
+
+
+  <li class="nav-user">
+
+  <a href="login.html" id="userIcon" class="user-icon">
+    <i class="fa-solid fa-user"></i>
+  </a>
+
+  
+  <div id="userCircleContainer" class="user-circle-container" style="display: none;">
+    <div id="userInitials" class="user-circle"></div>
+    <button id="logoutBtn" class="logout-btn">Logout</button>
+  </div>
+</li>
+
+    </ul>
+  </nav>
+
+ 
+  <section class="relative bg-black text-white text-center py-20">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-40"></div>
+    <div class="relative z-10 slide-in">
+      <h2 class="text-4xl font-extrabold mb-3 text-orange-400">Contact Us</h2>
+      <p class="text-lg text-gray-200" style="margin-left: 380px;">We’d love to hear from you — send us a message or visit us today!</p>
+    </div>
+  </section>
+
+
+  <main class="max-w-5xl mx-auto mt-12 p-6 grid md:grid-cols-2 gap-10 slide-in">
+    
+  
+    <div class="space-y-6">
+      <h3 class="text-2xl font-bold text-black mb-3">Get in Touch</h3>
+      <p>Have a question or feedback? Our team is always ready to help you.</p>
+
+      <div class="space-y-3 text-gray-700">
+        <p><i class="fa-solid fa-location-dot text-orange-500 mr-2"></i> 123 Savora Street, Akwa Ibom, Nigeria</p>
+        <p><i class="fa-solid fa-phone text-orange-500 mr-2"></i> +234 901 234 5678</p>
+        <p><i class="fa-solid fa-envelope text-orange-500 mr-2"></i> support@savora.com</p>
+      </div>
+
+      <div class="mt-6">
+        <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.674092014011!2d7.933263714770949!3d5.033355396357437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1067c2387cbcd1d3%3A0x21eb69c18cbd85!2sEket%2C%20Akwa%20Ibom!5e0!3m2!1sen!2sng!4v1693927358987!5m2!1sen!2sng"
+    width="100%"
+    height="350"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+      </div>
+    </div>
+
+    
+    <div class="bg-gray-50 shadow-md rounded-2xl p-6 border border-gray-200">
+      <h3 class="text-2xl font-bold mb-5 text-black text-center">Contact Us </h3>
+
+      <form id="contactForm" class="space-y-4">
+        <div>
+          <label class="block font-medium text-gray-700">Full Name</label>
+          <input type="text" id="contactName" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-orange-500" required />
         </div>
-        <!-- Hamburger Button for Mobile -->
-        <button class="hamburger" onclick="toggleSidebar()">
-            <span></span>
-            <span></span>
-            <span></span>
+
+        <div>
+          <label class="block font-medium text-gray-700">Email</label>
+          <input type="email" id="contactEmail" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-orange-500" required />
+        </div>
+
+        <div>
+          <label class="block font-medium text-gray-700">Message</label>
+          <textarea id="contactMessage" rows="4" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-orange-500" placeholder="Type your message here..." required></textarea>
+        </div>
+
+        <button id="sendMsgBtn" class="bg-orange-500 hover:bg-orange-600 text-white w-full py-3 rounded-lg font-semibold transition-all">
+          Send Message
         </button>
-        <ul class="nav-links">
-            <li><a href="food.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-             <li><a href="menu.html">Menu</a></li>
-            <li><a href="order.html">Order</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
-            <li><a href="bookings.html">Bookings</a></li>
-            <li><a href="cart.html">Cart</a></li>
-            <li><a href="signup.html">Sign Up</a></li>
-        </ul>
-        <!-- Sidebar for Mobile -->
-        <div class="sidebar" id="sidebar">
-            <button class="close-btn" onclick="toggleSidebar()">×</button>
-            <ul class="sidebar-links">
-                <li><a href="food.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="order.html">Order</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="contact.html"class="active">Contact</a></li>
-                <li><a href="bookings.html">Bookings</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
-            </ul>
-        </div>
-    </nav>
+      </form>
+    </div>
+  </main>
 
-    <section class="contact-section">
-        <h1>Contact Us</h1>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <p>Phone: (123) 456-7890 | Email: info@tastybite.com</p>
-    </section>
+  
+   <footer class="footer">
+    <h1>Follow us on:</h1>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <p>© 2025 TastyBite Restaurant. All rights reserved.</p>
+  </footer>
 
-    <footer class="footer">
-        <p>Follow us on:</p>
-        <div class="social-links">
-            <a href="https://facebook.com" target="_blank">Facebook</a>
-            <a href="https://twitter.com" target="_blank">Twitter</a>
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        </div>
-        <p>&copy; 2025 TastyBite Restaurant. All rights reserved.</p>
-    </footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init("WeK8JaTdl5ZqhN_tD"); 
+  })();
 
-    <script src="js/food.js"></script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("contactName").value.trim();
+    const email = document.getElementById("contactEmail").value.trim();
+    const msg = document.getElementById("contactMessage").value.trim();
+
+    if (!name || !email || !msg) {
+      Swal.fire("Missing Information", "Please fill in all fields before sending.", "warning");
+      return;
+    }
+
+
+    emailjs.send("service_qbetelo", "template_77hkkjf", {
+      from_name: name,
+      from_email: email,
+      message: msg,
+    })
+    .then(function () {
+      Swal.fire({
+        title: "Message Sent!",
+        text: "Thank you for contacting Savora. We'll reply soon.",
+        icon: "success",
+        confirmButtonColor: "#f97316",
+      });
+      document.getElementById("contactForm").reset();
+    })
+    .catch(function (error) {
+      console.error("EmailJS Error:", error);
+      Swal.fire("Error", "Oops! Something went wrong. Please try again.", "error");
+    });
+  });
+</script>
+
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
+
+  <script src="./js/global.js"></script>
+  <script src="./js/food.js"></script>
+  <script src="./js/cart.js"></script>
+<script src="./js/auth.js"></script>
+
+
+  <script src="js/login.js"></script>
+  <script src="./js/reg.js"></script>
 </body>
-</html> 
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

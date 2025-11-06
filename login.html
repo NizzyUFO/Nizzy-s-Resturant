@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - TastyBite</title>
+  <link rel="stylesheet" href="./css/login.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <div class="form-container">
+    <p class="title">Welcome back</p>
+
+    <form class="form" id="loginForm">
+      <input type="email" id="loginEmail" class="input" placeholder="Email" required />
+      <input type="password" id="loginPassword" class="input" placeholder="Password" required />
+      <p class="page-link">
+        <span class="page-link-label">Forgot Password?</span>
+      </p>
+      <button type="submit" class="form-btn">Log in</button>
+    </form>
+
+    <p class="sign-up-label">
+      Don’t have an account?
+      <a href="./reg.html" class="sign-up-link">Sign up</a>
+    </p>
+  </div>
+
+<script src="./js/login.js"></script>
+</body>
+</html>

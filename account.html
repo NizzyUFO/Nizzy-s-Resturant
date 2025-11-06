@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Account | SAVORA</title>
+  <link rel="stylesheet" href="./css/account.css" />
+<link rel="stylesheet" href="css/food.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+</head>
+<body>
+
+   <nav class="navbar">
+    <div class="logo" style="display:flex;align-items:center;gap:8px;">
+      <span class="logo-icon">🍽️</span>
+      <h1 class="logo-text">SAVORA</h1>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="food.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="bookings.html">Bookings</a></li>
+      <li><a href="contact.html">Contact</a></li>
+
+      <li class="cart-icon">
+        <a href="cart.html">
+          <i class="fa fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
+        </a>
+      </li>
+
+
+
+  <li class="nav-user">
+  <!-- Default user icon (shown when not logged in) -->
+  <a href="login.html" id="userIcon" class="user-icon">
+    <i class="fa-solid fa-user"></i>
+  </a>
+
+  <!-- Circle with initials + Logout button (hidden by default) -->
+  <div id="userCircleContainer" class="user-circle-container" style="display: none;">
+    <div id="userInitials" class="user-circle"></div>
+    <button id="logoutBtn" class="logout-btn">Logout</button>
+  </div>
+</li>
+
+    </ul>
+  </nav>
+
+  <!-- ✅ Account Section -->
+  <section class="account-container">
+    <div class="profile-card">
+      <div class="avatar" id="userAvatar">IM</div>
+      <div class="user-info">
+        <h2 id="userName">Welcome back, User 👋</h2>
+        <p class="user-email" id="userEmail">user@example.com</p>
+      </div>
+    </div>
+
+    <div class="account-options">
+      <div class="option-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Saved Addresses</h3>
+        <p>View and manage your delivery addresses</p>
+        <button class="btn">Manage</button>
+      </div>
+
+      <div class="option-card">
+        <i class="fas fa-receipt"></i>
+        <h3>Order History</h3>
+        <p>See all your previous orders and details</p>
+        <button class="btn">View</button>
+      </div>
+
+      <div class="option-card">
+        <i class="fas fa-truck"></i>
+        <h3>Track Deliveries</h3>
+        <p>Track your ongoing or recent deliveries</p>
+        <button class="btn">Track</button>
+      </div>
+    </div>
+  </section>
+
+
+
+
+<!-- Order History Modal -->
+<div id="orderHistoryModal" class="order-history-modal">
+  <div class="order-history-content">
+    <button id="closeOrderHistory" class="close-modal">&times;</button>
+    <h2>Order History</h2>
+    <div id="orderHistoryContent"></div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  <script src="./js/account.js"></script>
+  
+ <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="./js/auth.js"></script>
+
+
+<script src="./js/cart.js"></script>
+<!-- <script src="userAuth.js"></script> -->
+<script src="js/login.js"></script>
+
+
+<script src="./js/global.js"></script>
+</body>
+</html>

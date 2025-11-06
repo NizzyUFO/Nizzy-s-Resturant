@@ -3,66 +3,373 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - TastyBite Restaurant</title>
+    <title>About - SAVORA</title>
     <link rel="stylesheet" href="css/food.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+
+    <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+<script>
+    window.lucide = window.lucide || {};
+    lucide.createIcons = lucide.createIcons || function() {
+      console.warn('Lucide icons failed to load, using SVG fallbacks');
+      document.querySelectorAll('.lucide-icon.fallback').forEach(svg => {
+        svg.style.display = 'block';
+      });
+    };
+  </script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="assets/logo.png" alt="TastyBite Logo" class="logo-img">
+
+
+ <!-- NAVBAR -->
+<!-- <nav class="navbar">
+  <a href="food.html" class="logo">TastyBite</a>
+
+  <ul class="nav-links">
+    <li><a href="food.html" >Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="menu.html" >Menu</a></li>
+
+    <li class="cart-icon">
+      <a href="cart.html">
+        <i class="fa fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </a>
+    </li>
+
+    <li>
+      <div id="userIcon" class="user-circle">
+        <i class="fa fa-user"></i>
+      </div>
+    </li>
+
+    <li>
+      <button id="logoutBtn" class="logout-btn" style="display:none;">Logout</button>
+    </li>
+  </ul>
+</nav>
+ -->
+
+
+  <nav class="navbar">
+    <div class="logo" style="display:flex;align-items:center;gap:8px;">
+      <span class="logo-icon">🍽️</span>
+      <h1 class="logo-text">SAVORA</h1>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="food.html">Home</a></li>
+      <li><a href="about.html"  class="active">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="bookings.html">Bookings</a></li>
+      <li><a href="contact.html">Contact</a></li>
+
+      <li class="cart-icon">
+        <a href="cart.html">
+          <i class="fa fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
+        </a>
+      </li>
+
+
+
+  <li class="nav-user">
+  <!-- Default user icon (shown when not logged in) -->
+  <a href="login.html" id="userIcon" class="user-icon">
+    <i class="fa-solid fa-user"></i>
+  </a>
+
+  <!-- Circle with initials + Logout button (hidden by default) -->
+  <div id="userCircleContainer" class="user-circle-container" style="display: none;">
+    <div id="userInitials" class="user-circle"></div>
+    <button id="logoutBtn" class="logout-btn">Logout</button>
+  </div>
+</li>
+
+    </ul>
+  </nav>
+
+
+ 
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="section-heading">About SAVORA</h2>
+        <p class="about-description">
+          Founded in 2019, SAVORA began as a simple idea: to bridge the gap between food lovers and their favorite restaurants.
+          Today, we're proud to be one of the leading food delivery platforms, serving millions of customers across the nation
+          with our commitment to quality, speed, and exceptional service.
+        </p>
+        <!-- Mission Statement -->
+        <div class="mission-grid">
+          <div class="mission-item">
+            <div class="icon-circle">
+              <i data-lucide="heart" class="lucide-icon"></i>
+              <svg class="lucide-icon fallback" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <h3 class="sub-heading">Our Mission</h3>
+            <p class="mission-text">To connect communities through food, making every meal a delightful experience</p>
+          </div>
+          <div class="mission-item">
+            <div class="icon-circle">
+              <i data-lucide="award" class="lucide-icon"></i>
+              <svg class="lucide-icon fallback" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </div>
+            <h3 class="sub-heading">Our Vision</h3>
+            <p class="mission-text">To be the most trusted and innovative food delivery platform globally</p>
+          </div>
+          <div class="mission-item">
+            <div class="icon-circle">
+              <i data-lucide="chat" class="lucide-icon"></i>
+              <svg class="lucide-icon fallback" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+            </div>
+            <h3 class="sub-heading">Our Values</h3>
+            <p class="mission-text">Quality, reliability, and customer satisfaction in every delivery</p>
+          </div>
         </div>
-        <!-- Hamburger Button for Mobile -->
-        <button class="hamburger" onclick="toggleSidebar()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+      </div>
+    </div>
+  </section>
 
-        <ul class="nav-links">
-            <li><a href="food.html">Home</a></li>
-            <li><a href="about.html" class="active">About</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="order.html">Order</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="bookings.html">Bookings</a></li>
-            <li><a href="cart.html">Cart</a></li>
-            <li><a href="signup.html">Sign Up</a></li>
-        </ul>
-
-        <!-- Sidebar for Mobile -->
-        <div class="sidebar" id="sidebar">
-            <button class="close-btn" onclick="toggleSidebar()">×</button>
-            <ul class="sidebar-links">
-                <li><a href="food.html">Home</a></li>
-                <li><a href="about.html"class="active">About</a></li>
-                <li><a href="order.html">Order</a></li>
-                 <li><a href="menu.html">Menu</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="bookings.html">Bookings</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
-            </ul>
+  <!-- Stats Section -->
+  <section id="stats" class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number" id="meals-counter">0+</div>
+          <div class="stat-label">Meals Delivered</div>
         </div>
-    </nav>
+        <div class="stat-item">
+          <div class="stat-number" id="customers-counter">0+</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="restaurants-counter">0+</div>
+          <div class="stat-label">Partner Restaurants</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="about-section">
-        <h1>About TastyBite</h1>
-        <p>Founded in 2010, TastyBite is dedicated to serving fresh, locally-sourced dishes with a modern twist. Our chefs craft each meal with passion, ensuring a memorable dining experience.</p>
-        <p>Join us to explore our rich culinary heritage and innovative menu!</p>
-    </section>
+  <!-- Why Choose Us Section -->
+  <section id="why-choose-us">
+    <div class="container">
+      <h2 class="section-heading">Why Choose FoodieGo?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="icon-circle">
+            <i data-lucide="truck" class="lucide-icon"></i>
+            <svg class="lucide-icon fallback" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+          </div>
+          <h3 class="feature-heading">Fast Delivery</h3>
+          <p class="feature-text">Average delivery time of 30 minutes or less, ensuring your food arrives hot and fresh</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon-circle green">
+            <i data-lucide="leaf" class="lucide-icon"></i>
+            <svg class="lucide-icon fallback" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+              <path d="M17 8C8 10 5.9 16.17 3.82 21.34l5.89-1.08c1.54-2.66 3.48-4 5.29-4.58 2.36-.73 4-2.55 4-4.92 0-3.03-2.47-5.5-5.5-5.5S7 4.97 7 8c0 2.37 1.64 4.19 4 4.92 1.81.58 3.75 1.92 5.29 4.58l5.89 1.08C20.1 16.17 18 10 9 8"></path>
+            </svg>
+          </div>
+          <h3 class="feature-heading">Fresh Ingredients</h3>
+          <p class="feature-text">We partner only with restaurants that use the highest quality, fresh ingredients</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon-circle">
+            <i data-lucide="clock" class="lucide-icon"></i>
+            <svg class="lucide-icon fallback" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h3 class="feature-heading">24/7 Service</h3>
+          <p class="feature-text">Order anytime, anywhere. Our service is available round the clock for your convenience</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <h2 class="section-heading">What Our Customers Say</h2>
+      <div class="testimonial-card">
+        <div class="stars">
+          <i data-lucide="star" class="lucide-icon"></i>
+          <i data-lucide="star" class="lucide-icon"></i>
+          <i data-lucide="star" class="lucide-icon"></i>
+          <i data-lucide="star" class="lucide-icon"></i>
+          <i data-lucide="star" class="lucide-icon"></i>
+        </div>
+        <blockquote class="testimonial-quote" id="testimonial-text">
+          "FoodieGo has transformed the way I order food. The delivery is always on time and the food arrives fresh and hot!"
+        </blockquote>
+        <div class="testimonial-author" id="testimonial-author">Lisa Wang</div>
+        <div class="testimonial-location" id="testimonial-location">San Francisco</div>
+      </div>
+      <div class="testimonial-dots">
+        <button class="testimonial-dot active" data-index="0"></button>
+        <button class="testimonial-dot" data-index="1"></button>
+        <button class="testimonial-dot" data-index="2"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="team-section">
+    <div class="container">
+      <h2 class="section-heading">Meet Our Team</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e" alt="Sarah Johnson" class="team-image">
+          <h3 class="team-name">Sarah Johnson</h3>
+          <p class="team-role">CEO & Founder</p>
+          <button class="btn btn-secondary" onclick="toggleBio(this)">Read Bio</button>
+          <div class="team-bio">
+            Sarah founded FoodieGo with a passion for connecting people through food. With over 15 years in the tech industry, she leads with a vision for innovation.
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7" alt="Michael Chen" class="team-image">
+          <h3 class="team-name">Michael Chen</h3>
+          <p class="team-role">CTO</p>
+          <button class="btn btn-secondary" onclick="toggleBio(this)">Read Bio</button>
+          <div class="team-bio">
+            Michael oversees FoodieGo's technology, ensuring a seamless platform. His expertise in scalable systems drives our growth.
+          </div>
+        </div>
+       <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7" alt="Michael Chen" class="team-image">
+          <h3 class="team-name">Michael Chen</h3>
+          <p class="team-role">CTO</p>
+          <button class="btn btn-secondary" onclick="toggleBio(this)">Read Bio</button>
+          <div class="team-bio">
+            Michael oversees FoodieGo's technology, ensuring a seamless platform. His expertise in scalable systems drives our growth.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  
+  
+
+
+
+  
+   <!-- Footer -->
     <footer class="footer">
-        <p>Follow us on:</p>
+        <h1>Follow us on:</h1>
         <div class="social-links">
-            <a href="https://facebook.com" target="_blank">Facebook</a>
-            <a href="https://twitter.com" target="_blank">Twitter</a>
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        </div>
-        <p>&copy; 2025 TastyBite Restaurant. All rights reserved.</p>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+        <p>© 2025 TastyBite Restaurant. All rights reserved.</p>
     </footer>
 
-    <script src="js/food.js"></script>
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top" onclick="scrollToTop()">
+    <i data-lucide="chevron-up" style="width: 24px; height: 24px;"></i>
+  </button>
+
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const userIcon = document.getElementById("userIcon");
+  const logoutBtn = document.getElementById("logoutBtn");
+  const checkoutBtn = document.getElementById("checkoutBtn");
+  const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+  if (user) {
+    // Convert user icon into initials circle
+    const initials = `${user.firstName[0]}${user.lastName[0]}`.toUpperCase();
+    userIcon.innerHTML = `<div class="user-circle">${initials}</div>`;
+    userIcon.onclick = () => window.location.href = "profile.html";
+    logoutBtn.style.display = "inline-block";
+  } else {
+    userIcon.innerHTML = `<i class="fa fa-user"></i>`;
+    userIcon.onclick = () => window.location.href = "login.html";
+    logoutBtn.style.display = "none";
+  }
+
+  // Logout button
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("loggedInUser");
+    Swal.fire({
+      icon: "info",
+      title: "You have been logged out!",
+      showConfirmButton: false,
+      timer: 2000
+    }).then(() => {
+      window.location.reload();
+    });
+  });
+
+  // Checkout logic
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const currentUser = JSON.parse(localStorage.getItem("loggedInUser"));
+      if (currentUser) {
+        window.location.href = "checkout.html";
+      } else {
+        Swal.fire({
+          icon: "warning",
+          title: "Please log in first",
+          showConfirmButton: false,
+          timer: 2000
+        }).then(() => {
+          localStorage.setItem("redirectAfterLogin", "checkout.html");
+          window.location.href = "login.html";
+        });
+      }
+    });
+  }
+});
+</script>
+
+    
+ <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
+
+  <script src="./js/global.js"></script>
+  <script src="./js/food.js"></script>
+  <script src="./js/cart.js"></script>
+<script src="./js/auth.js"></script>
+
+
+  <script src="js/login.js"></script>
+  <script src="./js/reg.js"></script>
+
+
+
+
+ 
+
 </body>
 </html> 
 
@@ -282,7 +589,7 @@
 
  -->
 
-  <section class="footer">
+  <!-- <section class="footer">
     <h3>About Us</h3>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet turpis nulla, eleifend faucibus est sollicitudin ut.
@@ -294,7 +601,7 @@
       <a href="#"><i class="fab fa-instagram"></i></a>
       <a href="#"><i class="fab fa-linkedin-in"></i></a>
     </div>
-  </section>
+  </section> -->
 
 
 

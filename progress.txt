@@ -1,0 +1,4 @@
+- Create github account
+- Installed git
+- Configure git locally
+- Basic of git

@@ -1,66 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart - TastyBite Restaurant</title>
-    <link rel="stylesheet" href="css/food.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cart - SAVORA</title>
+  <link rel="stylesheet" href="./css/food.css" />
+   <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <style>
+    .cart-container { max-width:1000px; margin:40px auto; padding:20px; }
+    .cart-item { display:flex; gap:16px; align-items:center; padding:12px 0; border-bottom:1px solid #eee; }
+    .cart-item img{ width:110px; height:80px; object-fit:cover; border-radius:8px; }
+    .qty-input{ width:64px; padding:6px; text-align:center; }
+    .remove-btn{ background:#f44336; color:#fff; padding:6px 10px; border-radius:8px; border:none; cursor:pointer; }
+    .checkout-btn{ background:linear-gradient(90deg,#ff8a00,#ff3b30); color:#fff; padding:12px 20px; border-radius:12px; border:none; cursor:pointer; }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="assets/logo.png" alt="TastyBite Logo" class="logo-img">
-        </div>
-        <!-- Hamburger Button for Mobile -->
-        <button class="hamburger" onclick="toggleSidebar()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <ul class="nav-links">
-            <li><a href="food.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="order.html">Order</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="bookings.html">Bookings</a></li>
-            <li><a href="cart.html" class="active">Cart</a></li>
-            <li><a href="signup.html">Sign Up</a></li>
-        </ul>
-        <!-- Sidebar for Mobile -->
-        <div class="sidebar" id="sidebar">
-            <button class="close-btn" onclick="toggleSidebar()">×</button>
-            <ul class="sidebar-links">
-                <li><a href="food.html" >Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="order.html">Order</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="bookings.html">Bookings</a></li>
-                <li><a href="cart.html"class="active">Cart</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <section class="cart-section">
-        <h1>Your Cart</h1>
-        <div id="cart-items"></div>
-        <p>Total: $<span id="cart-total">0.00</span></p>
-        <a href="checkout.html" class="btn" onclick="saveCartForCheckout()">Proceed to Checkout</a>
-    </section>
+  <nav class="navbar">
+    <div class="logo" style="display:flex;align-items:center;gap:8px;">
+      <span class="logo-icon">🍽️</span>
+      <h1 class="logo-text">SAVORA</h1>
+    </div>
 
-    <footer class="footer">
-        <p>Follow us on:</p>
-        <div class="social-links">
-            <a href="https://facebook.com" target="_blank">Facebook</a>
-            <a href="https://twitter.com" target="_blank">Twitter</a>
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    <ul class="nav-links">
+      <li><a href="food.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="bookings.html">Bookings</a></li>
+      <li><a href="contact.html">Contact</a></li>
+
+      <li class="cart-icon">
+        <a href="cart.html"  class="active">
+          <i class="fa fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
+        </a>
+      </li>
+
+
+
+  <li class="nav-user">
+
+  <a href="login.html" id="userIcon" class="user-icon">
+    <i class="fa-solid fa-user"></i>
+  </a>
+
+  
+  <div id="userCircleContainer" class="user-circle-container" style="display: none;">
+    <div id="userInitials" class="user-circle"></div>
+    <button id="logoutBtn" class="logout-btn">Logout</button>
+  </div>
+</li>
+
+    </ul>
+  </nav>
+
+
+  <main class="cart-container">
+    <h1>Your Cart</h1>
+    <div id="cartList"></div>
+
+    <div style="text-align:right; margin-top:20px;">
+      <h3>Total: <span id="cartTotal">₦0</span></h3>
+      <button id="checkoutBtn" class="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </main>
+
+
+
+<script>
+
+  function getCart() {
+    return JSON.parse(localStorage.getItem('cart') || '[]');
+  }
+
+  function saveCart(cart) {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  function formatPrice(n) {
+    return '₦' + Number(n).toLocaleString();
+  }
+
+ 
+  function updateCartBadge() {
+    const cart = getCart();
+    const totalCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+    const badge = document.getElementById('cart-count');
+    if (badge) badge.textContent = totalCount;
+  }
+
+
+  function updateCheckoutButton() {
+    const cart = getCart();
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    
+    if (checkoutBtn) {
+      if (cart.length === 0) {
+        checkoutBtn.disabled = true;
+        checkoutBtn.style.opacity = '0.5';
+        checkoutBtn.style.cursor = 'not-allowed';
+      } else {
+        checkoutBtn.disabled = false;
+        checkoutBtn.style.opacity = '1';
+        checkoutBtn.style.cursor = 'pointer';
+      }
+    }
+  }
+
+ 
+  const cartList = document.getElementById('cartList');
+  const cartTotalEl = document.getElementById('cartTotal');
+
+  function renderCart() {
+    const cart = getCart();
+    cartList.innerHTML = '';
+
+    if (!cart.length) {
+      cartList.innerHTML = `
+        <p>Your cart is empty. 
+          <a href="menu.html">Go back and add something tasty!</a>
+        </p>`;
+      cartTotalEl.textContent = '₦0';
+      updateCartBadge();
+      updateCheckoutButton(); 
+      return;
+    }
+
+    let total = 0;
+    cart.forEach((item, idx) => {
+      total += item.price * (item.quantity || 1);
+      const div = document.createElement('div');
+      div.className = 'cart-item';
+      div.innerHTML = `
+        <img src="${item.image || ''}" alt="${item.name}">
+        <div style="flex:1">
+          <h4 style="margin:0 0 6px">${item.name}</h4>
+          <p style="margin:0">${formatPrice(item.price)}</p>
         </div>
-        <p>© 2025 TastyBite Restaurant. All rights reserved.</p>
-    </footer>
+        <div>
+          <input class="qty-input" type="number" min="1" value="${item.quantity || 1}" data-idx="${idx}">
+        </div>
+        <div>
+          <button class="remove-btn" data-idx="${idx}">Remove</button>
+        </div>
+      `;
+      cartList.appendChild(div);
+    });
 
-    <script src="js/food.js"></script>
+    cartTotalEl.textContent = formatPrice(total);
+
+    // === Remove item ===
+    document.querySelectorAll('.remove-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const i = Number(e.currentTarget.dataset.idx);
+        const cart = getCart();
+        cart.splice(i, 1);
+        saveCart(cart);
+        renderCart();
+        updateCartBadge();
+      });
+    });
+
+    
+    document.querySelectorAll('.qty-input').forEach(input => {
+      input.addEventListener('change', e => {
+        const idx = Number(e.currentTarget.dataset.idx);
+        let v = Number(e.currentTarget.value);
+        if (isNaN(v) || v < 1) v = 1;
+        const cart = getCart();
+        cart[idx].quantity = v;
+        saveCart(cart);
+        renderCart();
+        updateCartBadge();
+      });
+    });
+
+    updateCartBadge(); 
+    updateCheckoutButton(); 
+  }
+
+
+  
+  document.getElementById('checkoutBtn').addEventListener('click', () => {
+    const user = JSON.parse(localStorage.getItem('currentUser') || 'null');
+    if (!user) {
+      Swal.fire({
+        icon: 'info',
+        title: 'Please log in',
+        text: 'You must be logged in to checkout.',
+        confirmButtonText: 'Go to Login'
+      }).then(() => {
+        window.location.href = 'login.html';
+      });
+      return;
+    }
+
+  
+
+    window.location.href = 'checkout.html';
+  });
+
+
+
+  renderCart();
+  updateCartBadge();
+</script>
+
+
+
+ <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
+
+  <script src="./js/global.js"></script>
+  <script src="./js/food.js"></script>
+  <script src="./js/cart.js"></script>
+<script src="./js/auth.js"></script>
+
+
+  <script src="js/login.js"></script>
+  <script src="./js/reg.js"></script>
 </body>
-</html> 
+</html>

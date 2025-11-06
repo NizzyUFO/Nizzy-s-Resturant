@@ -1,0 +1,22 @@
+[
+  {"id":1,"name":"Jollof Rice","category":"Lunch","price":1500,"image":"https://eatwellabi.com/wp-content/uploads/2022/11/Jollof-rice-16-500x500.jpg"},
+  {"id":2,"name":"Fried Rice","category":"Lunch","price":1400,"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_rlN-2Lzgejk9KJ131Wic-XRYeVREDOTTXQ&s"},
+  {"id":3,"name":"Egusi Soup","category":"Traditional Meals","price":2000,"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUZM9-hrH0noyL5z_seD66O7DBPEHFbw64tw&s"},
+  {"id":4,"name":"Afang Soup","category":"Traditional Meals","price":2200,"image":"https://joyfulcook.com/wp-content/uploads/2025/03/6E78B4CC-D184-423C-9066-24B563598B14-e1745150676907.jpeg"},
+  {"id":5,"name":"Owho soup","category":"Traditional Meals","price":2500,"image":"https://i.ytimg.com/vi/37Af_7eCPSI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCj77CAxLbf9GpWclyzRUMta4Ts7A"},
+  {"id":6,"name":"Suya","category":"Snacks","price":700,"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ1sLxQCyeb6g94sBRsqr-gY0yf_ukVcjmsA&s"},
+  {"id":7,"name":"Akara","category":"Breakfast","price":300,"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNISybEPNMZ-QhvPzyuLsw-1MagDQVWQk1wQ&s"},
+  {"id":8,"name":"Moi Moi","category":"Breakfast","price":350,"image":"https://pulses.org/images/com_yoorecipe/422/moi-moi-rollup.jpg"},
+  {"id":9,"name":"Barbeque","category":"Dinner","price":1800,"image":"https://i.ytimg.com/vi/IqIfIRsdQmY/maxresdefault.jpg"},
+  {"id":10,"name":"Ofe Nsala (White Soup)","category":"Traditional Meals","price":2100,"image":"https://joyfulcook.com/wp-content/uploads/2025/01/PHOTO-2025-01-10-18-28-57-2-e1739135083724.jpg"},
+  {"id":11,"name":"Banga Soup","category":"Traditional Meals","price":2300,"image":"https://images.getrecipekit.com/20250220174925-banga-20soup.jpg?class=16x9"},
+  {"id":12,"name":"Efo Riro","category":"Traditional Meals","price":2000,"image":"https://i.ytimg.com/vi/lxCY5fObe30/maxresdefault.jpg"},
+  {"id":13,"name":"Abacha","category":"Traditional Meals","price":600,"image":"https://i.ytimg.com/vi/0bojPYzHvY8/maxresdefault.jpg"},
+  {"id":14,"name":"Zobo Drink","category":"Drinks","price":500,"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxnMFJ7wzspDHmk0GCQiXo9N2RT_h086ckEQ&s"},
+  {"id":15,"name":"Buns","category":"Snacks","price":1200,"image":"https://i.ytimg.com/vi/D1EPVmG_QJ8/maxresdefault.jpg"},
+  {"id":16,"name":"Beans & Plantain","category":"Breakfast","price":700,"image":"https://i.pinimg.com/736x/b2/f9/c9/b2f9c985a0e73d2441882132ec796a43.jpg"},
+  {"id":17,"name":"Oha Soup","category":"Traditional Meals","price":2200,"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDzHFzfhl3mhhwmiYCiciiFaB7yHyTvTlRBw&s"},
+  {"id":18,"name":"Tiger Nut Drink","category":"Drinks","price":2000,"image":"https://allnigerianfoods.com/wp-content/uploads/tiger-nut-milk.jpg"},
+  {"id":19,"name":"Plantain Chips","category":"Snacks","price":250,"image":"https://shopafricausa.com/cdn/shop/articles/Plaintain-Chips_1600x.jpg?v=1618932240"},
+  {"id":20,"name":"Kilishi","category":"Traditional Meals","price":2100,"image":"https://i.etsystatic.com/56142677/r/il/731283/6488213565/il_340x270.6488213565_66ui.jpg"}
+]

@@ -1,186 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - TastyBite Restaurant</title>
-      <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  integrity="sha512-...your-integrity-key..."
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
-    <link rel="stylesheet" href="css/food.css">
-</head>
-<body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="logo">
-            <img src="assets/logo.png" alt="TastyBite Logo" class="logo-img">
-        </div>
-        <!-- Hamburger Button for Mobile -->
-        <button class="hamburger" onclick="toggleSidebar()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <!-- Desktop Navbar Links -->
-        <ul class="nav-links">
-            <li><a href="food.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-             <li><a href="menu.html">Menu</a></li>
-            <li><a href="order.html">Order</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="bookings.html">Bookings</a></li>
-            <li><a href="cart.html">Cart</a></li>
-            <li><a href="signup.html">Sign Up</a></li>
-        </ul>
-        <!-- Sidebar for Mobile -->
-        <div class="sidebar" id="sidebar">
-            <button class="close-btn" onclick="toggleSidebar()">×</button>
-            <ul class="sidebar-links">
-                <li><a href="food.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="order.html">Order</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="bookings.html">Bookings</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Home Page Content -->
-    <section class="home-section">
-        <video autoplay muted loop class="background-video">
-            <source src="./images/1095329217-preview.mp4" type="video/mp4">
-        </video>
-        <div class="home-content">
-            <h1>A Taste Sensation Like No Other</h1>
-            <p>Experience the finest dining with our delicious menu!</p>
-            <a href="order.html" class="btn">Order Now</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <h1>Follow us on:</h1>
-        <div class="social-links">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-    </div>
-        <p>© 2025 TastyBite Restaurant. All rights reserved.</p>
-    </footer>
-
-    <script src="js/food.js"></script>
-</body>
-</html> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  integrity="sha512-...your-integrity-key..."
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
-  <link rel="stylesheet" href="./css/food.css">
+  <title>Home - SAVORA</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/food.css">
+
+ 
+
 </head>
 
 <body>
+  <!-- Navigation Bar -->
+  <!-- NAVBAR -->
+  <!-- <nav class="navbar">
+  <a href="food.html" class="logo">TastyBite</a>
 
+  <ul class="nav-links">
+    <li><a href="food.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="menu.html">Menu</a></li>
 
-  <header>
-    <nav class="navbar">
-      <div class="navbar-container">
-        <a href="#" class="navbar-logo"><i class="fas fa-utensils">Nizzy</i></a>
-        <button class="navbar-toggle">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-        <ul class="navbar-menu">
-          <li><a href="food.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="#">Order</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Bookings</a></li>
-        </ul>
+    <li class="cart-icon">
+      <a href="cart.html">
+        <i class="fa fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </a>
+    </li>
+
+    <li>
+      <div id="userIcon" class="user-circle">
+        <i class="fa fa-user"></i>
       </div>
-    </nav>
-  </header>
+    </li>
 
-  <section class="motion">
-    <video src="./images/1095329217-preview.mp4" autoplay loop muted>
+    <li>
+      <button id="logoutBtn" class="logout-btn" style="display:none;">Logout</button>
+    </li>
+  </ul>
+</nav>
+ -->
+
+  <nav class="navbar">
+    <div class="logo" style="display:flex;align-items:center;gap:8px;">
+      <span class="logo-icon">🍽️</span>
+      <h1 class="logo-text">SAVORA</h1>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="food.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="bookings.html">Bookings</a></li>
+      <li><a href="contact.html">Contact</a></li>
+
+      <li class="cart-icon">
+        <a href="cart.html">
+          <i class="fa fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
+        </a>
+      </li>
+
+
+
+  <li class="nav-user">
+  <!-- Default user icon (shown when not logged in) -->
+  <a href="login.html" id="userIcon" class="user-icon">
+    <i class="fa-solid fa-user"></i>
+  </a>
+
+  <!-- Circle with initials + Logout button (hidden by default) -->
+  <div id="userCircleContainer" class="user-circle-container" style="display: none;">
+    <div id="userInitials" class="user-circle"></div>
+    <button id="logoutBtn" class="logout-btn">Logout</button>
+  </div>
+</li>
+
+    </ul>
+  </nav>
+
+
+
+  <!-- Home Page Content -->
+  <section class="home-section">
+    <video autoplay muted loop class="background-video">
+      <source src="./images/1095329217-preview.mp4" type="video/mp4">
     </video>
-
-    <div class="text-box">
-      <h1>A <br> Taste Sensation <br> Like No Other</h1>
-      <a href="" class="ex-btn">Explore</a>
+    <div class="home-content">
+      <h1>A Taste Sensation <br> Like No Other</h1>
+      <p>Experience the finest dining with our delicious menu!</p>
+      <a href="menu.html" class="btn">View Menu</a>
     </div>
   </section>
- 
 
-  <section class="footer">
-    <h3>About Us</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet turpis nulla, eleifend faucibus est sollicitudin ut.
-      Maecenas ut venenatis ex, et dapibus purus.
-    </p>
-    <div class="social-icons">
+
+
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <h1>Follow us on:</h1>
+    <div class="social-links">
       <a href="#"><i class="fab fa-facebook-f"></i></a>
       <a href="#"><i class="fab fa-twitter"></i></a>
       <a href="#"><i class="fab fa-instagram"></i></a>
       <a href="#"><i class="fab fa-linkedin-in"></i></a>
     </div>
-  </section>
-</body>
-<script src="./js/food.js"></script>
+    <p>© 2025 TastyBite Restaurant. All rights reserved.</p>
+  </footer>
 
-</html> -->
+
+
+  <!-- <script>
+
+  </script> -->
+
+
+
+
+
+
+
+  <!-- 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const userIcon = document.getElementById("userIcon");
+  const logoutBtn = document.getElementById("logoutBtn");
+  const checkoutBtn = document.getElementById("checkoutBtn");
+  const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+  if (user) {
+    // Convert user icon into initials circle
+    const initials = `${user.firstName[0]}${user.lastName[0]}`.toUpperCase();
+    userIcon.innerHTML = `<div class="user-circle">${initials}</div>`;
+    userIcon.onclick = () => window.location.href = "profile.html";
+    logoutBtn.style.display = "inline-block";
+  } else {
+    userIcon.innerHTML = `<i class="fa fa-user"></i>`;
+    userIcon.onclick = () => window.location.href = "login.html";
+    logoutBtn.style.display = "none";
+  }
+
+  // Logout button
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("loggedInUser");
+    Swal.fire({
+      icon: "info",
+      title: "You have been logged out!",
+      showConfirmButton: false,
+      timer: 2000
+    }).then(() => {
+      window.location.reload();
+    });
+  });
+
+  // Checkout logic
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const currentUser = JSON.parse(localStorage.getItem("loggedInUser"));
+      if (currentUser) {
+        window.location.href = "checkout.html";
+      } else {
+        Swal.fire({
+          icon: "warning",
+          title: "Please log in first",
+          showConfirmButton: false,
+          timer: 2000
+        }).then(() => {
+          localStorage.setItem("redirectAfterLogin", "checkout.html");
+          window.location.href = "login.html";
+        });
+      }
+    });
+  }
+});
+</script> -->
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
+
+  <script src="./js/global.js"></script>
+  <script src="./js/food.js"></script>
+  <script src="./js/cart.js"></script>
+<script src="./js/auth.js"></script>
+
+
+  <script src="js/login.js"></script>
+  <script src="./js/reg.js"></script>
+</body>
+
+</html>

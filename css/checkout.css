@@ -1,0 +1,161 @@
+/* From Uiverse.io by zanina-yassine */
+.modal {
+  width: 90%;
+  max-width: 450px;
+  background: #FFFFFF;
+  box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01),
+              0px 105px 63px rgba(0, 0, 0, 0.05),
+              0px 47px 47px rgba(0, 0, 0, 0.09),
+              0px 12px 26px rgba(0, 0, 0, 0.1);
+  border-radius: 26px;
+  margin: 70px auto;
+  padding: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.payment--options {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  padding: 10px;
+}
+
+.payment--options button {
+  height: 55px;
+  background: #F2F2F2;
+  border-radius: 11px;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.payment--options button svg {
+  height: 18px;
+}
+
+.payment--options button:last-child svg {
+  height: 22px;
+}
+
+.separator {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 10px;
+  color: #8B8E98;
+}
+
+.separator > p {
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+}
+
+.separator .line {
+  height: 1px;
+  background-color: #e8e8e8;
+  border: 0;
+}
+
+.credit-card-info--form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input_container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  gap: 15px;
+}
+
+.input_label {
+  font-size: 15px;
+  color: #8B8E98;
+  font-weight: 600;
+}
+
+.input_field {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 9px;
+  outline: none;
+  background-color: #F2F2F2;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.input_field:focus {
+  box-shadow: 0px 0px 0px 2px #242424;
+  background-color: transparent;
+}
+
+/* Checkout Button */
+.purchase--btn {
+  height: 55px;
+  border-radius: 11px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  background: linear-gradient(180deg, #363636 0%, #1B1B1B 50%, #000000 100%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.purchase--btn:hover {
+  box-shadow: 0px 0px 0px 2px #FFFFFF, 0px 0px 0px 4px #0000003a;
+}
+
+/* Reset input number styles */
+.input_field::-webkit-outer-spin-button,
+.input_field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input_field[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* ✅ Responsive Adjustments */
+@media (max-width: 600px) {
+  .modal {
+    margin-top: 30px;
+    padding: 15px;
+  }
+
+  .separator > p {
+    font-size: 13px;
+  }
+
+  .input_label {
+    font-size: 14px;
+  }
+
+  .purchase--btn {
+    height: 50px;
+    font-size: 13px;
+  }
+
+  .split {
+    grid-template-columns: 1fr 1fr;
+  }
+}
