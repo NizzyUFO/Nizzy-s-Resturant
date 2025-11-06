@@ -222,12 +222,12 @@ if (statsSection) {
 // Testimonials
 const testimonials = [
   {
-    text: "FoodieGo has transformed the way I order food. The delivery is always on time and the food arrives fresh and hot!",
+    text: "Savora has transformed the way I order food. The delivery is always on time and the food arrives fresh and hot!",
     author: "Lisa Wang",
     location: "San Francisco"
   },
   {
-    text: "As a restaurant owner, partnering with FoodieGo has increased our reach significantly. Their platform is intuitive and effective.",
+    text: "As a restaurant owner, partnering with Savora has increased our reach significantly. Their platform is intuitive and effective.",
     author: "Tony Martinez",
     location: "Austin"
   },

@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
         timer: 1500,
         showConfirmButton: false
       }).then(() => {
-        window.location.href = "food.html"; // change to your home page
+        window.location.href = "index.html"; // change to your home page
       });
 
     } else {
